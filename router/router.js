@@ -1,0 +1,13 @@
+const express =require('express');
+const routuer=express.Router();
+const {UserSignup,getAllUser,UserLogin,updatePassword,findeUser,updateuserpermission,deleteUser,GetUser,changePassword}=require('../controller/controller');
+routuer.route('/').post(UserSignup);
+routuer.route('/AllUser').get(getAllUser);
+routuer.route('/UserLogin').post(UserLogin);
+routuer.route('/updatepassword').put(updatePassword);
+routuer.route('/findeuser').post(findeUser);
+routuer.route('/updateuserpermission').put(updateuserpermission);
+routuer.route('/deleteuser').delete(deleteUser);
+routuer.route('/getuser/:email').get(GetUser);
+routuer.route('/changepassword').put(changePassword);
+module.exports=routuer;
